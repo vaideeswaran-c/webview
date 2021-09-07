@@ -29,6 +29,16 @@
             }
         );
     };
+    function handleSaveBtn() {
+        //close the webview
+        MessengerExtensions.requestCloseBrowser(function success() {
+            console.log("webview closed");
+            // webview closed
+        }, function error(err) {
+            // an error occurred
+            console.log(err);
+        });
+    }
     </script>
         <h1>Welcome to Agentz</h1>
         <ul>
@@ -38,5 +48,6 @@
                 <li>Learn about us</li>
                 <li>Main menu</li>
         </ul>
+        <button onclick="handleSaveBtn()">Submit</button>
 </body>
 </html>
