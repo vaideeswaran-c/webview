@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentz Webview</title>
+</head>
+<body>
+    <script>
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/messenger.Extensions.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'Messenger'));
+
+      window.extAsyncInit = function() {
+        // the Messenger Extensions JS SDK is done loading
+        MessengerExtensions.getContext('2587463058216998',
+            function success(thread_context){
+                // success
+                console.log("psid", thread_context.psid)
+            },
+            function error(err){
+                // error
+                console.log(err);
+            }
+        );
+    };
+    </script>
+        <h1>Welcome to Agentz</h1>
+        <ul>
+                <li>Book an Appointment</li>
+                <li>Just Browsing</li>
+                <li>Live Help</li>
+                <li>Learn about us</li>
+                <li>Main menu</li>
+        </ul>
+</body>
+</html>
